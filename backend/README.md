@@ -45,7 +45,7 @@ docker compose up
 python3 -m venv ./.venv
 ```
 
-- Activate local python environment
+- Activate local python environment (need to activate on every new terminal session)
 
 ```bash
 source ./.venv/bin/activate
