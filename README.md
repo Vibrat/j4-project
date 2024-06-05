@@ -1,6 +1,6 @@
 # Funny Movie Project
 
 - [Backend](backend/README.md)
-- [Frotend](frontend/README.md)
+- [Frontend](frontend/README.md)
 
-Written by Lam Nguyen
+Written by Lam Nguyen.
