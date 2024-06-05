@@ -12,13 +12,15 @@ export const handlers = [
       email: "test@gmail.com",
       token: "ABC",
     });
-  }),
+  })
 ];
 
 const server = setupServer(...handlers);
 
 describe("Auth Components", () => {
-  beforeAll(() => server.listen());
+  beforeAll(() => server.listen({
+    onUnhandledRequest: "bypass"
+  }));
   beforeEach(() => {
     jest.clearAllMocks();
   });

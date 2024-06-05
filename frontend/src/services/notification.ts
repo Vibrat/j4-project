@@ -22,7 +22,7 @@ class KeepAliveWebSocket {
     this.url = url
   }
   connect() {
-    this.ws = new WebSocket(`${this.url}?token=${this.token()}`)
+    this.ws = new WebSocket(`${this.url}?token=${this.token?.()}`)
     this.ws.onmessage = this.onmessage
     this.ws.onclose = this.onclose
     this.ws.onclose = (event: CloseEvent) => {
@@ -49,9 +49,7 @@ class KeepAliveWebSocket {
   }
 }
 
-let MasterSocket: KeepAliveWebSocket = new KeepAliveWebSocket(
-  `${WS_BASE_URL}/ws/broadcast`
-)
+const MasterSocket: KeepAliveWebSocket = new KeepAliveWebSocket(`${WS_BASE_URL}/ws/broadcast`)
 
 export const notificationAPI = createApi({
   baseQuery: fetchBaseQuery({

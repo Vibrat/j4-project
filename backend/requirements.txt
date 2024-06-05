@@ -5,3 +5,4 @@ pyjwt
 httpx
 requests
 beautifulsoup4
+websocket_client
