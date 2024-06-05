@@ -6,10 +6,10 @@ This project contributes to the backend service of Funny Movies which are compos
 - CRUD for sharing videos model using background tasks available under `/videos`
 - A broadcasting server built by websocket for broading sharing videos available under `/ws/broadcast`
 
-API documentation (available after setting up the project up and running)
+API documentation:
 
-- [Redoc](http://localhost:8000/redoc)
-- [Swagger](http://localhost:8000/docs#/)
+- [Redoc](https://remi.tuidoc.com/redoc)
+- [Swagger](https://remi.tuidoc.com/docs)
 
 
 ## Installation & Configuration
