@@ -1,0 +1,28 @@
+version: '3.8'  # Specify the version of Docker Compose
+
+services:
+  postgres:
+    image: postgres:latest  # Use the latest version of PostgreSQL
+    container_name: postgres_container  # Name the container
+    environment:
+      POSTGRES_DB: mydatabase  # Name of the database
+      POSTGRES_USER: myuser    # Username
+      POSTGRES_PASSWORD: mypassword  # Password
+    ports:
+      - "5432:5432"  # Expose the PostgreSQL port
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # Persist data even if the container is removed
+      - ./seeds:/docker-entrypoint-initdb.d
+  backend:
+    build: .
+    container_name: backend_container
+    ports:
+      - "8000:80"
+    depends_on:
+      - postgres
+    environment:
+      - JWT_SECRET=secret
+      - DB_CONNECTION=postgresql://myuser:mypassword@postgres:5432/mydatabase
+
+volumes:
+  postgres_data:  # Define a volume to persist data
